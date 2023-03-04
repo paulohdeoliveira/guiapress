@@ -3,6 +3,7 @@ Segundo projeto criado no curso de Formação em Node.js do Guia do Programador,
 <hr>
 <h3>Sobre o Projeto</h3>
 <p>O objetivo do projeto é criar um blog com painel administrativo.</p>
+<p> Projeto em andamento</p>
 
 <h3>Tecnologias Utilizadas</h3>
 <li>Node.js</li>
