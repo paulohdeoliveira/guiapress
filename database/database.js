@@ -7,6 +7,7 @@ const conn = new Sequelize(
     {
         host: process.env.DB_HOST,
         dialect: process.env.DB_DIALECT,
+        timezone: process.env.DB_TIMEZONE,
     }
 );
 

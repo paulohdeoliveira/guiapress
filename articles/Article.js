@@ -18,6 +18,11 @@ const Article = conn.define("articles", {
 });
 
 Category.hasMany(Article);
-Article.belongsTo(Category);
+Article.belongsTo(Category, {
+    constraint: true,
+    foreignKey: "categoryId",
+});
+
+// Article.sync({ force: true });
 
 module.exports = Article;
