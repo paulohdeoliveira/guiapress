@@ -2,9 +2,9 @@
 ("../../partials/navbar.ejs") %>
 <div class="container">
     <hr />
-    <h2>Categorias</h2>
-    <a class="btn btn-success" href="/admin/categories/new" role="button"
-        >Criar nova categoria</a
+    <h2>Artigos</h2>
+    <a class="btn btn-success" href="/admin/articles/new" role="button"
+        >Criar novo Artigo</a
     >
     <hr />
     <table class="table table-bordered">
@@ -13,36 +13,32 @@
                 <th>ID</th>
                 <th>Título</th>
                 <th>Slug</th>
+                <th>Categoria</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <% categories.forEach(category=>{ %>
+            <% articles.forEach(article =>{ %>
             <tr>
-                <td><%= category.id %></td>
-                <td><%= category.title %></td>
-                <td><%= category.slug %></td>
-                <td>
-                    <a
-                        href="/admin/categories/edit/<%= category.id %>"
-                        class="btn btn-warning"
-                        >Editar</a
-                    >
-
+                <td><%= article.id %></td>
+                <td><%= article.title %></td>
+                <td><%= article.slug %></td>
+                <td><%= article.category.title %></td>
+                <th>
                     <form
                         method="post"
-                        action="/categories/delete"
+                        action="/articles/delete"
                         style="display: inline"
                         onsubmit="confirmarDelecao(event, this)"
                     >
                         <input
                             type="hidden"
                             name="id"
-                            value="<%= category.id %>"
+                            value="<%= article.id %>"
                         />
                         <button class="btn btn-danger">Deletar</button>
                     </form>
-                </td>
+                </th>
             </tr>
             <% }) %>
         </tbody>
@@ -52,7 +48,7 @@
 <script>
     function confirmarDelecao(event, form) {
         event.preventDefault();
-        let decision = confirm("Confirma a exclusão da Categoria ?");
+        let decision = confirm("Confirma a exclusão do Artigo ?");
         if (decision) {
             form.submit();
         }
