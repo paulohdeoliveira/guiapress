@@ -1,0 +1,75 @@
+<%- include('../../partials/header.ejs') %> <%-
+include('../../partials/navbar.ejs') %>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2>Edição de artigo</h2>
+        </div>
+        <div class="card-body">
+            <form action="/articles/update" method="post">
+                <input type="hidden" name="id" value="<%= article.id %>" />
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Defina o título do artigo"
+                    class="form-control"
+                    value="<%= article.title %>"
+                /><br />
+                <textarea
+                    name="body"
+                    class="form-control"
+                    placeholder="Escreva o conteúdo do artigo"
+                    id="editor"
+                ></textarea>
+                <br />
+                <label>Categoria</label>
+                <select class="form-control" name="category">
+                    <% categories.forEach((category) => { %> <%
+                    if(article.categoryId == category.id) { %>
+                    <option value="<%= category.id %>" selected>
+                        <%= category.title %>
+                    </option>
+                    <% } else { %>
+                    <option value="<%= category.id %>">
+                        <%= category.title %>
+                    </option>
+                    <% } %> <% }) %>
+                </select>
+                <br />
+                <button class="btn btn-primary">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../../partials/footer.ejs') %>
+
+<script src="/tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        language: "pt_BR",
+        selector: "#editor",
+        promotion: false,
+        plugins: [
+            "lists",
+            "advlist",
+            "autolink",
+            "emoticons",
+            "link",
+            "media",
+            "preview",
+            "searchreplace",
+            "save",
+            "table",
+            "wordcount",
+            "image",
+            "fullscreen",
+        ],
+        init_instance_callback: function () {
+            let content = "<%- article.body %>";
+            tinymce.get("editor").setContent(content);
+        },
+    });
+</script>

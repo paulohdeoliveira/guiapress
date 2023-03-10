@@ -18,7 +18,7 @@
                     class="form-control"
                     placeholder="Escreva o artigo aqui"
                     name="body"
-                    id="article"
+                    id="editor"
                 ></textarea>
                 <label style="margin-top: 20px">Categorias</label>
                 <select name="category" class="form-control mt-2">
@@ -42,7 +42,7 @@
 <script>
     tinymce.init({
         language: "pt_BR",
-        selector: "#article",
+        selector: "#editor",
         promotion: false,
         plugins: [
             "lists",
@@ -50,13 +50,14 @@
             "autolink",
             "emoticons",
             "link",
-            "hr",
             "media",
             "preview",
             "searchreplace",
             "save",
             "table",
             "wordcount",
+            "image",
+            "fullscreen",
         ],
     });
 </script>
