@@ -1,15 +1,30 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-    <a href="/" class="navbar-brand">GuiaPress</a>
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item mr-auto">
-            <a class="nav-link" href="/">Home</a>
-        </li>
-        <% categories.forEach(category => { %>
-        <li class="nav-item mr-auto">
-            <a class="nav-link" href="/category/<%= category.slug%>"
-                ><%= category.title %></a
-            >
-        </li>
-        <% }) %>
-    </ul>
+<nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a href="/" class="navbar-brand">GuiaPress</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mr-auto">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <% categories.forEach(category => { %>
+                <li class="nav-item mr-auto">
+                    <a class="nav-link" href="/category/<%= category.slug%>"
+                        ><%= category.title %></a
+                    >
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
 </nav>

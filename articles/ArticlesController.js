@@ -30,9 +30,13 @@ router.post("/articles/save", (req, res) => {
         slug: slugify(title),
         body: body,
         categoryId: category,
-    }).then(() => {
-        res.redirect("/admin/articles");
-    });
+    })
+        .then(() => {
+            res.redirect("/admin/articles");
+        })
+        .cath((error) => {
+            res.redirect("/admin/article");
+        });
 });
 
 router.post("/articles/delete", (req, res) => {
@@ -69,7 +73,7 @@ router.get("/admin/articles/edit/:id", (req, res) => {
                 res.redirect("/");
             }
         })
-        .catch((err) => {
+        .catch((error) => {
             res.redirect("/");
         });
 });

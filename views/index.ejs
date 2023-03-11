@@ -1,35 +1,34 @@
-<%- include ("partials/header.ejs") %> <%- include ("partials/navbar-home.ejs")
-%>
+<%- include ("partials/header.ejs") %> <%- include ("partials/navbar-home.ejs") %>
 
-<body>
-    <div class="container">
-        <div class="p-5 mb-4 bg-light rounded-3 mt-4">
-            <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Bem Vindo(a)!</h1>
-                <p class="col-md-8 fs-4">
-                    Este é um blog sobre tecnologia da informação. Nele você
-                    encontrará informações atualizadas sobre tendências
-                    tecnológicas, desenvolvimento de software, segurança da
-                    informação e muito mais!!!
-                </p>
-                <button class="btn btn-primary btn-lg" type="button">
-                    Saiba Mais
-                </button>
-            </div>
-        </div>
+        <body>
+            <div class="container">
+                <div class="p-5 mb-4 bg-light rounded" style="margin-top: 100px">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">Bem Vindo(a)!</h1>
+                        <p class="col-md-8 fs-4">
+                            Este é um blog sobre tecnologia da informação. Nele você
+                            encontrará informações atualizadas sobre tendências
+                            tecnológicas, desenvolvimento de software, segurança da
+                            informação e muito mais!!!
+                        </p>
+                        <button class="btn btn-primary btn-lg" type="button">
+                            Saiba Mais
+                        </button>
+                    </div>
+                </div>
 
-        <% articles.forEach(article =>{ %>
-        <div class="card mt-4">
-            <div class="card-header">
-                <h2><%= article.title %></h2>
+                <% articles.forEach(article=>{ %>
+                    <div class="card mt-4">
+                        <div class="card-title">
+                            <h2>
+                                <%= article.title %>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+                        </div>
+                    </div>
+                    <% }) %>
             </div>
-            <div class="card-body">
-                <a href="/<%= article.slug %>" class="btn btn-success"
-                    >Ler Artigo</a
-                >
-            </div>
-        </div>
-        <% }) %>
-    </div>
-</body>
-<%- include ('partials/footer.ejs') %>
+        </body>
+        <%- include ('partials/footer.ejs') %>
