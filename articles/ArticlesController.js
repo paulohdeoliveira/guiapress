@@ -34,7 +34,7 @@ router.post("/articles/save", (req, res) => {
         .then(() => {
             res.redirect("/admin/articles");
         })
-        .cath((error) => {
+        .catch((error) => {
             res.redirect("/admin/article");
         });
 });
