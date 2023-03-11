@@ -1,0 +1,23 @@
+<%- include ("../../partials/header.ejs") %>
+    <div class="col d-flex justify-content-center">
+        <div class="card mt-5">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Login Administrador</h3>
+                </div>
+                <form method="post" action="/authenticate">
+                    <div class="mt-4">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Digite seu email">
+                    </div>
+                    <div class="mt-2">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" name="password" placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include ("../../partials/footer.ejs") %>
