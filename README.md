@@ -6,12 +6,16 @@ Segundo projeto criado no curso de Formação em Node.js do Guia do Programador,
 <p> Projeto em andamento</p>
 
 <h3>Tecnologias Utilizadas</h3>
-<li>Node.js</li>
+<li>Node</li>
 <li>Express</li>
 <li>EJS</li>
 <li>Sequelize</li>
 <li>Express Sessions</li>
 <li>TinyMCE</li>
+<li>Javascript</li>
+<li>JQuery</li>
 
 <h3>Importante</h3>
+
+<h5>Para meu aprendizado estou adicionando minhas próprias modificações no projeto</h5>
 <p>Projeto criado durante o curso <a href="https://www.udemy.com/course/formacao-nodejs/">Formação em Node.js</a></p>
